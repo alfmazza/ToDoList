@@ -32,20 +32,17 @@ public class LogicController {
 
     public void editTask(Tasks task, String taskName, String taskDesc) {
         
-        persController.editTask(task);
-        
+
         Tasks taskid = this.searchTaskId(task.getId());
-        task.setTitle(taskName);
-        task.setDescription(taskDesc);
-        task.getId();
-        
-        this.taskEdit(taskid);
+        taskid.setTitle(taskName);
+        taskid.setDescription(taskDesc);
+        persController.editTask(taskid);
         
         
     }
 
     private Tasks searchTaskId(int taskId) {
-        
+
         return persController.bringTaskId(taskId);
     }
 
